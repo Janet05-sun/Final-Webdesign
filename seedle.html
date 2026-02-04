@@ -41,7 +41,6 @@
     margin-top: 50px;
   }
   
-  
   .process-section {
     margin: 200px 0; 
     margin-top: 10px; 
@@ -467,7 +466,7 @@
       <h2>Ideation</h2>
     </div>
     <div class="ideation-menu">
-      
+      <!-- Why Section -->
       <div class="ideation-item">
         <button class="ideation-trigger" onclick="toggleIdeation(this)">
           <span class="ideation-title">Problem</span>
@@ -483,7 +482,7 @@
         </div>
       </div>
 
-      
+      <!-- What Section -->
       <div class="ideation-item">
         <button class="ideation-trigger" onclick="toggleIdeation(this)">
           <span class="ideation-title">Context</span>
@@ -500,7 +499,7 @@
         </div>
       </div>
 
-      
+      <!-- How Section -->
       <div class="ideation-item">
         <button class="ideation-trigger" onclick="toggleIdeation(this)">
           <span class="ideation-title">Solution</span>
@@ -552,49 +551,49 @@
   </div>
 </div>
 
-
+<!-- Horizontal Scroll Section -->
 <div class="horizontal-scroll-wrapper">
   <div class="sticky-container">
     <div class="carousel-track">
       <div class="carousel-card">
         <img src="photo/seedle/1.png" alt="Screen 1">
-        <div class="carousel-subtext">01
+        <div class="carousel-subtext">01 // Starting Screen</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/2.png" alt="Screen 2">
-        <div class="carousel-subtext">02
+        <div class="carousel-subtext">02 // Your Garden Dashboard</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/3.png" alt="Screen 3">
-        <div class="carousel-subtext">03
+        <div class="carousel-subtext">03 // Species Discovery</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/4.png" alt="Screen 4">
-        <div class="carousel-subtext">04
+        <div class="carousel-subtext">04 // Sighting Map</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/5.png" alt="Screen 5">
-        <div class="carousel-subtext">05
+        <div class="carousel-subtext">05 // Virtual Seed Randomizer</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/6.png" alt="Screen 6">
-        <div class="carousel-subtext">06
+        <div class="carousel-subtext">06 // Progress Analytics</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/7.png" alt="Screen 7">
-        <div class="carousel-subtext">07
+        <div class="carousel-subtext">07 // Community Bloom</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/8.png" alt="Screen 8">
-        <div class="carousel-subtext">08
+        <div class="carousel-subtext">08 // Important Reminders</div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/9.png" alt="Screen 9">
-        <div class="carousel-subtext">09
+        <div class="carousel-subtext">09 // Community Page </div>
       </div>
       <div class="carousel-card">
         <img src="photo/seedle/10.png" alt="Screen 10">
-        <div class="carousel-subtext">10
+        <div class="carousel-subtext">10 // Leaderboard With Friends</div>
       </div>
     </div>
   </div>
@@ -624,7 +623,7 @@
   </div>
 </div>
 
-
+<!-- Exhibition Section -->
 <div class="ideation-section" id="exhibition-target" style="padding-top: 20px;">
   <div class="ideation-container">
     <div class="ideation-header">
@@ -667,7 +666,7 @@
 
 <script src="main.js"></script>
 <script>
-
+  
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
   
@@ -677,16 +676,16 @@
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
       lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'; 
     });
   });
   
   lightbox.addEventListener('click', () => {
     lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; 
   });
 
-
+  //AI used here till the end for the wrapper scroll effect
   const track = document.querySelector('.carousel-track');
   const wrapper = document.querySelector('.horizontal-scroll-wrapper');
   
@@ -697,12 +696,11 @@
       const wrapperHeight = wrapperRect.height;
       const stickyHeight = window.innerHeight;
       
-
-
+     
       let scrollProgress = -wrapperTop / (wrapperHeight - stickyHeight);
       scrollProgress = Math.max(0, Math.min(1, scrollProgress));
       
-
+      
       const trackWidth = track.scrollWidth;
       const viewWidth = window.innerWidth;
       const maxTranslate = trackWidth - viewWidth;
